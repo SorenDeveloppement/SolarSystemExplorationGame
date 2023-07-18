@@ -17,30 +17,63 @@ MonoBehaviour:
   - enabled: 1
     useFirstLayerAsMask: 0
     noiseSettings:
-      strength: 0.15
-      numLayers: 4
-      baseRoughness: 1
-      roughness: 2
-      persistence: 0.55
-      center: {x: 0, y: 0, z: 0}
-      minValue: 1
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.2
+        numLayers: 5
+        baseRoughness: 1
+        roughness: 3
+        persistence: 0.34
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0.7
+      rigidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
   - enabled: 1
     useFirstLayerAsMask: 1
     noiseSettings:
-      strength: 0.15
-      numLayers: 2
-      baseRoughness: 0.94
-      roughness: 1.81
-      persistence: 0.42
-      center: {x: 0, y: 0, z: 0}
-      minValue: 1
+      filterType: 0
+      simpleNoiseSettings:
+        strength: -0.06
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 1.2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0.7
+      rigidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
   - enabled: 1
-    useFirstLayerAsMask: 1
+    useFirstLayerAsMask: 0
     noiseSettings:
-      strength: 0.3
-      numLayers: 3
-      baseRoughness: 1
-      roughness: 0.4
-      persistence: 1
-      center: {x: 1, y: 25, z: 0}
-      minValue: 0
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.2
+        numLayers: 1
+        baseRoughness: 0.5
+        roughness: 1
+        persistence: 0
+        center: {x: 0, y: 0, z: 0}
+        minValue: 6
+      rigidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
