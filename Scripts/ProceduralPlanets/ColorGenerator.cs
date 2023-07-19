@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class ColorGenerator
 {
     ColourSettings settings;
     Texture2D texture;
-    const int textureResolution = 50;
+    const int textureResolution = 100;
 
     public void UpdateSettings(ColourSettings _settings)
     {
