@@ -48,4 +48,9 @@ public class ShapeGenerator
         elevationMinMax.AddValue(elevation);
         return pointOnUnitSphere * elevation;
     }
+
+    public ShapeSettings GetShapeSettings()
+    {
+        return settings;
+    }
 }
