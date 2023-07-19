@@ -7,21 +7,23 @@ public class Planet : MonoBehaviour
     public Material material;
     [Range(2, 256)] public int resolution = 10;
     public bool autoUpdate = true;
+    /* public bool rotate;
+    [ConditionalHide("rotate", 0)] public float rotationSpeed = 1; */
     public enum FaceRenderMask { All, Top, Bottom, Left, Right, Front, Back };
     public FaceRenderMask faceRenderMask;
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
     [HideInInspector] public bool shapeSettingsFoldout;
     [HideInInspector] public bool colourSettingsFoldout;
-    ShapeGenerator shapeGenerator;
-    ColorGenerator colorGenerator;
+    ShapeGenerator shapeGenerator = new ShapeGenerator();
+    ColorGenerator colorGenerator = new ColorGenerator();
     [SerializeField, HideInInspector] MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
 
     void Initialize()
     {
-        shapeGenerator = new ShapeGenerator(shapeSettings);
-        colorGenerator = new ColorGenerator(colourSettings);
+        shapeGenerator.UpdateSettings(shapeSettings);
+        colorGenerator.UpdateSettings(colourSettings);
 
         if (meshFilters == null || meshFilters.Length == 0)
         {
@@ -90,9 +92,6 @@ public class Planet : MonoBehaviour
 
     void GenerateColours()
     {
-        foreach (MeshFilter m in meshFilters)
-        {
-            m.GetComponent<MeshRenderer>().sharedMaterial.color = colourSettings.planetColour;
-        }
+        colorGenerator.UpdateColors();
     }
 }
