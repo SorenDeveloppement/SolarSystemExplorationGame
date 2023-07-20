@@ -9,6 +9,9 @@ public class Ocean : MonoBehaviour
     [SerializeField, HideInInspector] MeshFilter meshFilter = new MeshFilter();
     WaterMeshCreator waterMeshCreator;
     public bool autoUpdate = true;
+    public float wavesLength = 0.7f;
+    public float amplitude = 0.03f;
+    public float period = 1f;
 
     void Initialize()
     {
@@ -36,7 +39,7 @@ public class Ocean : MonoBehaviour
         if (autoUpdate)
         {
             GenerateOcean();
-            waterMeshCreator.UpdateWaves();
+            waterMeshCreator.UpdateWaves(wavesLength, period, amplitude);
         }
     }
 
@@ -54,6 +57,6 @@ public class Ocean : MonoBehaviour
     // Waves generation //
 
     private void Update() {
-        waterMeshCreator.UpdateWaves();
+        waterMeshCreator.UpdateWaves(wavesLength, period, amplitude);
     }
 }
