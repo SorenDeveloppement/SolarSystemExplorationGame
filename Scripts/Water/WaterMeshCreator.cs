@@ -59,8 +59,8 @@ public class WaterMeshCreator
     // Sinusoidal waves
     public void UpdateWaves()
     {
-        float wavesLength = 1f;
-        float amplitude = 0.2f;
+        float wavesLength = 0.7f;
+        float amplitude = 0.03f;
         float period = 1f;
         float speed = wavesLength / period;
         float k = (2 * Mathf.PI) / (wavesLength); // Waves number
